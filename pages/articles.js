@@ -1,20 +1,23 @@
 import { connectToDatabase } from "../util/mongodb";
+import articleStyles from "../styles/Articles.module.css";
 
 export default function Articles({ articles }) {
   return (
-    <div>
-      <h1>Articles</h1>
-      <p></p>
-      <ul>
-        {articles.map((article) => (
-          <li>
-            <h2>{article.title}</h2>
-            <h3>{article.subtitle}</h3>
-            <h4>{article.author}</h4>
-            <p>{article.content}</p>
-          </li>
-        ))}
-      </ul>
+    <div className={articleStyles.container}>
+      <main className={articleStyles.main}>
+        <h1 className={articleStyles.title}>Articles</h1>
+
+        <div className={articleStyles.grid}>
+          {articles.map((article, index) => (
+            <div key={index} className={articleStyles.card}>
+              <h2>{article.title}</h2>
+              <h3>{article.subtitle}</h3>
+              {/* <h4>{article.author}</h4> */}
+              <p>{article.content}</p>
+            </div>
+          ))}
+        </div>
+      </main>
     </div>
   );
 }

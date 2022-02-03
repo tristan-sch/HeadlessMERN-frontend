@@ -7,72 +7,77 @@ export default function Home({ isConnected }) {
   return (
     <div>
       <div className="container">
-        <Head>
+        {/* <Head>
           <title>Create Next App</title>
           <link rel="icon" href="/favicon.ico" />
-        </Head>
+        </Head> */}
 
         <main>
-          <h1 className="title">Welcome to Studio Live .</h1>
+          {/* <h1 className="title">Welcome to Studio Live .</h1> */}
 
-          {isConnected ? (
-            <h2 className="subtitle">You are connected to the HeadlessMERN</h2>
+          {/* {isConnected ? (
+            <h2 className="description">
+              You are connected to the HeadlessMERN
+            </h2>
           ) : (
             <h2 className="subtitle">
               You are NOT connected to the HeadlessMERN. Check the{" "}
               <code>README.md</code> for instructions.
             </h2>
-          )}
+          )} */}
 
-          <p className="description">
+          {/* <p className="description">
             Get started by editing <code>pages/index.js</code>
-          </p>
+          </p> */}
 
           <div className="grid">
-            <a href="https://nextjs.org/docs" className="card">
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className="card">
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              className="card"
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className="card"
-            >
-              <h3>Deploy &rarr;</h3>
+            <a href="/articles" className="card">
+              <h3>Articles &rarr;</h3>
               <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
+                Read the articles from the Vefþróun and learn more about web
+                design!
+              </p>
+            </a>
+
+            <a href="/assignments" className="card">
+              <h3>Projects &rarr;</h3>
+              <p>
+                Discover our projects and the stack we used to develop them.
+              </p>
+            </a>
+
+            <a href="/" className="card">
+              <h3>About us &rarr;</h3>
+              <p>
+                We are the students from the Reykjavík Academy of Web
+                Develop­ment, come meet us!
+              </p>
+            </a>
+
+            <a href="/" className="card">
+              <h3>Documentation &rarr;</h3>
+              <p>
+                You want to know how this website was developed and how we built
+                our backend? Follow this link!
               </p>
             </a>
           </div>
         </main>
 
-        <footer>
+        {/* <footer>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
             Powered by{" "}
-            <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+            <img src="/logo.png" alt="Vercel Logo" className="logo" />
           </a>
-        </footer>
+        </footer> */}
 
         <style jsx>{`
           .container {
-            min-height: 100vh;
+            // min-height: 100vh;
             padding: 0 0.5rem;
             display: flex;
             flex-direction: column;
@@ -81,7 +86,7 @@ export default function Home({ isConnected }) {
           }
 
           main {
-            padding: 5rem 0;
+            // padding: 5rem 0;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -223,16 +228,6 @@ export default function Home({ isConnected }) {
     </div>
   );
 }
-
-// export async function getServerSideProps(context) {
-//   const { client } = await connectToDatabase()
-
-//   const isConnected = await client.isConnected(); // Returns true or false
-
-//   return {
-//     props: { isConnected },
-//   };
-// }
 
 export async function getServerSideProps(context) {
   let isConnected;

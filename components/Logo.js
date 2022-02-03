@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Logo() {
   return (
     <Link href="/">
-      <Image src="/logo.svg" alt="logo" height={149} width={100} />
+      <Image src="/logo.png" alt="logo" height={100} width={149} />
     </Link>
   );
 }
